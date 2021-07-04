@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>My First Grid Layout</title>
+		<style>
+			html, body{
+				margin: 0;
+				box-sizing: border-box;
+			}
+			.container{
+				display: grid;
+				grid-template-collumns: reapet(12, 1fr);
+				grid-template-areas:
+				"l l m m m m m m m m m m"
+				"b b b b b b b b b b b b"
+				"c c c c c c c c s s s s"
+				"f f f f f f f f f f f f";
+				max-width: 1170px;
+				margin: 0 auto;
+				min-height: 100vh;
+			}
+			.logo{
+				background-color: red;
+				grid-area: l;
+			}
+			.menu{
+				background-color: #333;
+				grid-area: m;
+			}
+			.banner{
+				background-color: gray;
+				grid-area: b;
+			}
+			.content{
+				background-color: gold;
+				grid-area: c;
+				min-height: 80vh;
+				padding: 10px;
+				margin: 10px;
+				box-shadow: 0 2px 5px rgba(0,0,0, .5);
+			}
+			.sidebar{
+				background-color: olive;
+				grid-area: s;
+			}
+			.footer{
+				background-color: #333;
+				grid-area: f;
+			}
+			@media screen and (max-width: 780px){
+				.container{
+					grid-template-areas:
+					"l l l l l l l l l l l l"
+					"m m m m m m m m m m m m"
+					"b b b b b b b b b b b b"
+					"c c c c c c c c c c c c"
+					"s s s s s s s s s s s s"
+					"f f f f f f f f f f f f";
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo">Logo</div>
+			<div class= "menu">Menu</div>
+			<div class="banner">Banner</div>
+			<div class="content">Content</div>
+			<div class="sidebar">Sidebar</div>
+			<div class="footer">Footer</div>
+			
+		</div>
+	</body>
+</html>
